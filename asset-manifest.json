@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/markdown-to-fishborn-chart-converter/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/markdown-to-fishborn-chart-converter/static/js/main.65e3cc2c.chunk.js",
+    "main.js.map": "/markdown-to-fishborn-chart-converter/static/js/main.65e3cc2c.chunk.js.map",
+    "runtime-main.js": "/markdown-to-fishborn-chart-converter/static/js/runtime-main.cc8a02c3.js",
+    "runtime-main.js.map": "/markdown-to-fishborn-chart-converter/static/js/runtime-main.cc8a02c3.js.map",
+    "static/js/2.21ef87fc.chunk.js": "/markdown-to-fishborn-chart-converter/static/js/2.21ef87fc.chunk.js",
+    "static/js/2.21ef87fc.chunk.js.map": "/markdown-to-fishborn-chart-converter/static/js/2.21ef87fc.chunk.js.map",
+    "static/js/3.5f381409.chunk.js": "/markdown-to-fishborn-chart-converter/static/js/3.5f381409.chunk.js",
+    "static/js/3.5f381409.chunk.js.map": "/markdown-to-fishborn-chart-converter/static/js/3.5f381409.chunk.js.map",
+    "index.html": "/markdown-to-fishborn-chart-converter/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/markdown-to-fishborn-chart-converter/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.21ef87fc.chunk.js.LICENSE.txt": "/markdown-to-fishborn-chart-converter/static/js/2.21ef87fc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc8a02c3.js",
+    "static/js/2.21ef87fc.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.65e3cc2c.chunk.js"
+  ]
+}
