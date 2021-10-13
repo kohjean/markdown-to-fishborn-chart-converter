@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.active h2 {
+  color: #3DCCFA;
+}
+
+.inactive {
+  opacity: 0.6;
+}

@@ -1,6 +1,6 @@
-import React from 'react';
 import { SubTitle } from './SubTitle';
 import { CodeField } from './CodeField';
+import { useToggleActive } from './hooks/useToggleActive';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
@@ -8,8 +8,9 @@ const Container = styled.div`
 `;
 
 export const CodeSection = (props) => {
+  useToggleActive('code-section', 'file-section');
   return (
-    <Container>
+    <Container id="code-section">
       <SubTitle text="Input Code" />
       <CodeField name={"CODE"}/>
     </Container>
