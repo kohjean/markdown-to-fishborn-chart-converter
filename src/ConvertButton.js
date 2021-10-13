@@ -6,7 +6,7 @@ export const ConvertButton = () => {
     <>
       <Button
         type="submit"
-        form="file-uploader"
+        form="file-section"
         variant="contained"
         size="large"
         endIcon={<ChangeCircleIcon />}
