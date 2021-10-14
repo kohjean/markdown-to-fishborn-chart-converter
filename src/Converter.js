@@ -17,12 +17,14 @@ const AlignCenter = styled.div`
 export const Converter = () => {
   return (
     <>
-    <StyledDiv>
-      <FileSection />
-      <AlignCenter><p>or</p></AlignCenter>
-      <CodeSection />
-    </StyledDiv>
-    <ConvertButton />
+      <StyledDiv>
+        <FileSection />
+        <AlignCenter>
+          <p>or</p>
+        </AlignCenter>
+        <CodeSection />
+      </StyledDiv>
+      <ConvertButton />
     </>
   );
 };

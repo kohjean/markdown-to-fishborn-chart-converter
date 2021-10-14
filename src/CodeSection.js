@@ -12,7 +12,7 @@ export const CodeSection = (props) => {
   return (
     <Container id="code-section">
       <SubTitle text="Input Code" />
-      <CodeField name={"CODE"}/>
+      <CodeField name={'CODE'} />
     </Container>
   );
 };
