@@ -6,13 +6,13 @@ const Container = styled.div`
   width: 50%;
   margin: 0 auto;
   height: 10rem;
-  &:hover label{
+  &:hover label {
     color: #1976d2;
   }
   &:focus-within {
     color: #1976d2;
   }
-  `;
+`;
 
 const StyledTextarea = styled.textarea`
   box-sizing: border-box;
@@ -56,7 +56,7 @@ export const CodeField = ({ name }) => {
   return (
     <Container>
       <StyledLabel htmlFor="textarea">{name}</StyledLabel>
-      <StyledTextarea id="textarea" />
+      <StyledTextarea id="textarea" name="code" />
     </Container>
   );
 };

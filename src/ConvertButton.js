@@ -1,12 +1,12 @@
 import Button from '@mui/material/Button';
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
 
-export const ConvertButton = () => {
+export const ConvertButton = ({target}) => {
   return (
     <>
       <Button
         type="submit"
-        form="file-section"
+        form={target}
         variant="contained"
         size="large"
         endIcon={<ChangeCircleIcon />}

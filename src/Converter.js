@@ -3,7 +3,7 @@ import { FileSection } from './FileSection';
 import { CodeSection } from './CodeSection';
 import { ConvertButton } from './ConvertButton';
 
-const StyledDiv = styled.div`
+const StyledForm = styled.form`
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -17,12 +17,14 @@ const AlignCenter = styled.div`
 export const Converter = () => {
   return (
     <>
-    <StyledDiv>
-      <FileSection />
-      <AlignCenter><p>or</p></AlignCenter>
-      <CodeSection />
-    </StyledDiv>
-    <ConvertButton />
+      <StyledForm id="form" action="./" method="">
+        <FileSection />
+        <AlignCenter>
+          <p>or</p>
+        </AlignCenter>
+        <CodeSection />
+      </StyledForm>
+      <ConvertButton target={'form'} />
     </>
   );
 };
