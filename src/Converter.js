@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import { FileSection } from './FileSection';
 import { CodeSection } from './CodeSection';
@@ -15,6 +16,7 @@ const AlignCenter = styled.div`
 `;
 
 export const Converter = () => {
+  const [text, setText] = useState('');
   return (
     <>
       <StyledForm id="form" action="./" method="">
@@ -23,6 +25,7 @@ export const Converter = () => {
           <p>or</p>
         </AlignCenter>
         <CodeSection />
+        <input type="hidden" name="files-data" value={text} />
       </StyledForm>
       <ConvertButton target={'form'} />
     </>
