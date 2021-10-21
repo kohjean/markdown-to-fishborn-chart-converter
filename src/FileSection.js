@@ -7,12 +7,12 @@ const Container = styled.div`
   width: 40%;
 `;
 
-export const FileSection = () => {
+export const FileSection = ({ setText }) => {
   useToggleActive('file-section', 'code-section');
   return (
     <Container id="file-section">
       <SubTitle text="File Upload" />
-      <FileUploader size={'10rem'} />
+      <FileUploader size={'10rem'} setText={setText} />
     </Container>
   );
 };

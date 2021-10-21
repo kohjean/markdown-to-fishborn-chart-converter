@@ -7,12 +7,12 @@ const Container = styled.div`
   width: 40%;
 `;
 
-export const CodeSection = (props) => {
+export const CodeSection = ({ setText }) => {
   useToggleActive('code-section', 'file-section');
   return (
     <Container id="code-section">
       <SubTitle text="Input Code" />
-      <CodeField name={'CODE'} />
+      <CodeField name={'CODE'} setText={setText} />
     </Container>
   );
 };
