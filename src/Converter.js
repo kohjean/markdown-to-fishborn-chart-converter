@@ -20,11 +20,11 @@ export const Converter = () => {
   return (
     <>
       <StyledForm id="form" action="./" method="">
-        <FileSection />
+        <FileSection setText={setText} />
         <AlignCenter>
           <p>or</p>
         </AlignCenter>
-        <CodeSection />
+        <CodeSection setText={setText} />
         <input type="hidden" name="files-data" value={text} />
       </StyledForm>
       <ConvertButton target={'form'} />

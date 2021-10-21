@@ -52,11 +52,18 @@ const StyledLabel = styled.label`
   }
 `;
 
-export const CodeField = ({ name }) => {
+export const CodeField = ({ name, setText }) => {
+  const textDataSetter = (event) => {
+    setText(event.target.value);
+  };
+
   return (
     <Container>
       <StyledLabel htmlFor="textarea">{name}</StyledLabel>
-      <StyledTextarea id="textarea" name="code" />
+      <StyledTextarea
+        id="textarea"
+        onChange={(event) => textDataSetter(event)}
+      />
     </Container>
   );
 };
