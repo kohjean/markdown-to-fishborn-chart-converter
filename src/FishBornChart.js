@@ -6,6 +6,7 @@ const StyledCanvas = styled.canvas`
   background-color: #fff;
 `;
 
-export const FishBornChart = () => {
   return <StyledCanvas />;
+export const FishBornChart = (props) => {
+  console.log(props.markdown);
 };

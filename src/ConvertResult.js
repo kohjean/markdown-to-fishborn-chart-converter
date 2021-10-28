@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { FishBornChart } from './FishBornChart';
 import { CancelButton } from './CancelButton';
@@ -10,9 +11,10 @@ const Flex = styled.div`
 `;
 
 export const ConvertResult = () => {
+  const params = useParams();
   return (
     <>
-      <FishBornChart />
+      <FishBornChart markdown={params.markdown} />
       <Flex>
         <CancelButton />
         <DownloadButton />

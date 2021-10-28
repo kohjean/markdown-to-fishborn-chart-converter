@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { FileSection } from './FileSection';
 import { CodeSection } from './CodeSection';
@@ -17,15 +18,24 @@ const AlignCenter = styled.div`
 
 export const Converter = () => {
   const [text, setText] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const markdown = `${event.target.children['hidden'].value}`;
+    const query = './converted/' + markdown;
+    navigate(query);
+  };
+
   return (
     <>
-      <StyledForm id="form" action="./" method="">
+      <StyledForm id="form" onSubmit={handleSubmit}>
         <FileSection setText={setText} />
         <AlignCenter>
           <p>or</p>
         </AlignCenter>
         <CodeSection setText={setText} />
-        <input type="hidden" name="files-data" value={text} />
+        <input type="hidden" value={text} id="hidden" />
       </StyledForm>
       <ConvertButton target={'form'} />
     </>
