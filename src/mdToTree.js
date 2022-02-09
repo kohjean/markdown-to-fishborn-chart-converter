@@ -1,5 +1,4 @@
 export const mdToTree = (mdLines) => {
-  console.log(mdLines);
   const _data = setInfoEachElem(mdLines);
 
   function countSpace(line) {
@@ -45,7 +44,6 @@ export const mdToTree = (mdLines) => {
       },
       { stack: parentIndexStack, prevDepth: 0 },
     );
-    console.log(result);
     return result;
   }
 
