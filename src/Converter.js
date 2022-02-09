@@ -22,9 +22,11 @@ export const Converter = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const markdown = `${event.target.children['hidden'].value}`;
-    const query = './converted/' + markdown;
-    navigate(query);
+    // URLエンコードの際に改行コードが変換されるので目印の文字列に変換しておいて受け取り先で復号する
+    const replaceLF = (text) => text.replace(/\r?\n/g, '&nbsp;');
+    const param = replaceLF(`${event.target.children['hidden'].value}`);
+    const url = '/converted/' + param;
+    navigate(url);
   };
 
   return (
