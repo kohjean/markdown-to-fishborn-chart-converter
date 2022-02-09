@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Spine = () => {
-  return <SDiv />;
+  return <SDiv className="spine" />;
 };
 
 const SDiv = styled.div`

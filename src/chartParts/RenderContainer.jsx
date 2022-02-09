@@ -1,20 +1,12 @@
 import styled from '@emotion/styled';
-import { CalcH2 } from './calc';
-import { Ploblem } from './Ploblem';
 import { Spine } from './Spine';
+import { RecursiveComponent } from './RecursiveComponent';
 
-export const RenderContainer = (props) => {
-  const { h2List } = props;
-  const h2Elem = h2List.map((text, index) => CalcH2(text, index));
+export const RenderContainer = ({ root }) => {
   return (
-    <SDiv>
-      <Ploblem text="PLOBLEM" />
+    <SDiv className="container">
       <Spine />
-      {h2Elem.map((obj, index) => (
-        <SH2 key={index} obj={obj}>
-          {obj.text}
-        </SH2>
-      ))}
+      <RecursiveComponent props={root} />
     </SDiv>
   );
 };
@@ -26,18 +18,5 @@ const SDiv = styled.div`
   width: 700px;
   height: 500px;
   border: 1px solid #000;
+  box-sizing: border-box;
 `;
-
-const SH2 = styled.div(
-  {
-    borderBottom: '1px solid #000',
-    position: 'absolute',
-    width: '250px',
-  },
-  (props) => ({
-    width: props.obj.width,
-    top: props.obj.top,
-    left: props.obj.left,
-    transform: props.obj.transform,
-  }),
-);
