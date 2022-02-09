@@ -3,10 +3,16 @@ import { Spine } from './Spine';
 import { RecursiveComponent } from './RecursiveComponent';
 
 export const RenderContainer = ({ root }) => {
+  const { text, depth, children, id } = root;
   return (
     <SDiv className="container">
       <Spine />
-      <RecursiveComponent props={root} />
+      <div data-depth={depth} id={`no_${id}`}>
+        {text}
+      </div>
+      {children.map((elem) => (
+        <RecursiveComponent props={elem} />
+      ))}
     </SDiv>
   );
 };
