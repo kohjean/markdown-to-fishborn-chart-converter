@@ -10,7 +10,7 @@ function App() {
         <h1>markdown to fishbone-chart converter</h1>
         <Routes>
           <Route path="/" element={<Converter />} />
-          <Route path="/converted" element={<ConvertResult />} />
+          <Route path="/converted/:markdown" element={<ConvertResult />} />
         </Routes>
       </header>
     </div>

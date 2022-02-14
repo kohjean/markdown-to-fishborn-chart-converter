@@ -10,5 +10,5 @@ export const useToggleActive = (activateId, inactivateId) => {
       inactivate.classList.remove('active');
       inactivate.classList.add('inactive');
     });
-  }, []);
+  }, [activateId, inactivateId]);
 };

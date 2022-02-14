@@ -1,11 +1,10 @@
-import styled from '@emotion/styled';
+import { RenderContainer } from './chartParts/RenderContainer';
+import { mdToTree } from './mdToTree';
 
-const StyledCanvas = styled.canvas`
-  height: 60vh;
-  width: 80vw;
-  background-color: #fff;
-`;
+export const FishBornChart = (props) => {
+  // URLパラメータに渡す際に改行コードを変換していた部分の復号
+  const mdLines = props.markdown.split('&nbsp;');
+  const root = mdToTree(mdLines);
 
-export const FishBornChart = () => {
-  return <StyledCanvas />;
+  return <RenderContainer root={root} />;
 };
