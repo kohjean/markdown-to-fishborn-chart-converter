@@ -28,8 +28,13 @@ const SDiv = styled.div`
   background-color: #fff;
   color: #000;
   position: relative;
-  width: 700px;
+  width: 800px;
   height: 500px;
   border: 1px solid #000;
   box-sizing: border-box;
+  & * {
+    position: absolute;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+  }
 `;
