@@ -49,7 +49,10 @@ const Node = styled.div`
         ? 'border-top: 1px solid #000;'
         : 'border-bottom: 1px solid #000;'};
     // インデックスで異なる
-    left: ${({ theme }) => `${100 - theme.myIndex * 50}px`};
+    left: ${({ theme }) =>
+      theme.isUpper
+        ? `${185 - (theme.myIndex + 1) * 54}px`
+        : `${-30 + (theme.myIndex + 1) * 50}px`};
   }
   &[data-depth='3'] {
     font-size: 0.6rem;
