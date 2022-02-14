@@ -7,9 +7,14 @@ export const RenderContainer = ({ root }) => {
   return (
     <SDiv className="container">
       <Spine />
-      {children.map((elem) => (
-        <RecursiveComponent props={elem} />
       <MainPloblem data-depth={depth}>{text}</MainPloblem>
+      {children.map((elem, idx) => (
+        <RecursiveComponent
+          props={elem}
+          key={elem.id}
+          idx={idx}
+          branchIdx={idx}
+        />
       ))}
     </SDiv>
   );
