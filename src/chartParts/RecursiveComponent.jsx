@@ -30,7 +30,7 @@ const Node = styled.div`
     border-bottom: solid 1px #000;
     // 上下で異なる
     top: ${({ theme }) =>
-      `calc(${theme.isUpper ? '125px + 0.5rem' : '375px - 1.5rem + 2px'})`};
+      `calc(${theme.isUpper ? '122px + 0.5rem' : '375px - 1.5rem + 2px'})`};
     transform: ${({ theme }) =>
       `${theme.isUpper ? 'rotate(60deg) translateY(-50%)' : 'rotate(120deg)'}`};
     // インデックスで異なる
@@ -38,7 +38,7 @@ const Node = styled.div`
   }
   &[data-depth='2'] {
     font-size: 0.8rem;
-    top: calc(96px / 2 + 0.5rem);
+    top: calc((98px + 1.5rem) / 2);
     // 領域(子要素(数, 高さ))で異なる
     width: 96px;
     // 上下で異なる
@@ -61,7 +61,7 @@ const Node = styled.div`
     width: 64px;
     // 上下で異なる
     text-align: ${({ theme }) => (theme.isUpper ? 'right' : 'left')};
-    top: ${({ theme }) => (theme.isUpper ? '-40px' : '39px')};
+    top: ${({ theme }) => (theme.isUpper ? '-40px' : '43px')};
     transform: ${({ theme }) =>
       theme.isUpper ? 'rotate(60deg)' : 'rotate(120deg)'};
     // インデックスで異なる
