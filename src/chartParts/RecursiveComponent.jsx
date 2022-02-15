@@ -61,10 +61,10 @@ const Node = styled.div`
     width: 64px;
     // 上下で異なる
     text-align: ${({ theme }) => (theme.isUpper ? 'right' : 'left')};
-    top: ${({ theme }) => (theme.isUpper ? '-40px' : '54px')};
+    top: ${({ theme }) => (theme.isUpper ? '-40px' : '39px')};
     transform: ${({ theme }) =>
       theme.isUpper ? 'rotate(60deg)' : 'rotate(120deg)'};
     // インデックスで異なる
-    left: ${({ theme }) => `${36 - theme.myIndex * 36}px`};
+    left: ${({ theme }) => `${36 - theme.myIndex * 32}px`};
   }
 `;
