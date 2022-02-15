@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { FileSection } from './FileSection';
 import { CodeSection } from './CodeSection';
 import { ConvertButton } from './ConvertButton';
+import { variable } from './const/global';
 
 const StyledForm = styled.form`
   display: flex;
@@ -25,7 +26,7 @@ export const Converter = () => {
     // URLエンコードの際に改行コードが変換されるので目印の文字列に変換しておいて受け取り先で復号する
     const replaceLF = (text) => text.replace(/\r?\n/g, '&nbsp;');
     const param = replaceLF(`${event.target.children['hidden'].value}`);
-    const url = '/converted/' + param;
+    const url = `${variable.__rootdir}/converted/${param}`;
     navigate(url);
   };
 
