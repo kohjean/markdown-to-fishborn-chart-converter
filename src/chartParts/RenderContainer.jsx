@@ -7,7 +7,7 @@ export const RenderContainer = ({ root }) => {
   return (
     <SDiv className="container">
       <Spine />
-      <MainPloblem data-depth={depth}>{text}</MainPloblem>
+      <MainProblem data-depth={depth}>{text}</MainProblem>
       {children.map((elem, idx) => (
         <RecursiveComponent
           props={elem}
@@ -20,7 +20,7 @@ export const RenderContainer = ({ root }) => {
   );
 };
 
-const MainPloblem = styled.div`
+const MainProblem = styled.div`
   top: calc(50%);
   left: calc(100% - 7rem);
   width: 7rem;

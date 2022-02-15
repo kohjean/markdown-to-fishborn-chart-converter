@@ -49,7 +49,10 @@ const Node = styled.div`
         ? 'border-top: 1px solid #000;'
         : 'border-bottom: 1px solid #000;'};
     // インデックスで異なる
-    left: ${({ theme }) => `${100 - theme.myIndex * 50}px`};
+    left: ${({ theme }) =>
+      theme.isUpper
+        ? `${185 - (theme.myIndex + 1) * 54}px`
+        : `${-30 + (theme.myIndex + 1) * 50}px`};
   }
   &[data-depth='3'] {
     font-size: 0.6rem;
@@ -58,10 +61,10 @@ const Node = styled.div`
     width: 64px;
     // 上下で異なる
     text-align: ${({ theme }) => (theme.isUpper ? 'right' : 'left')};
-    top: ${({ theme }) => (theme.isUpper ? '-40px' : '54px')};
+    top: ${({ theme }) => (theme.isUpper ? '-40px' : '39px')};
     transform: ${({ theme }) =>
       theme.isUpper ? 'rotate(60deg)' : 'rotate(120deg)'};
     // インデックスで異なる
-    left: ${({ theme }) => `${36 - theme.myIndex * 36}px`};
+    left: ${({ theme }) => `${36 - theme.myIndex * 32}px`};
   }
 `;

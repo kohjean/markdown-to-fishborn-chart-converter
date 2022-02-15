@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Ploblem = (props) => {
+export const Problem = (props) => {
   const { text } = props;
   return <SDiv>{text}</SDiv>;
 };
