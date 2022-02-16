@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { FishBornChart } from './FishBornChart';
@@ -12,9 +13,10 @@ const Flex = styled.div`
 
 export const ConvertResult = () => {
   const params = useParams();
+  const chartImg = useRef();
   return (
     <>
-      <FishBornChart markdown={params.markdown} />
+      <FishBornChart markdown={params.markdown} ref={chartImg} />
       <Flex>
         <CancelButton />
         <DownloadButton />
