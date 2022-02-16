@@ -11,7 +11,7 @@ export const CodeSection = ({ setText }) => {
   useToggleActive('code-section', 'file-section');
   return (
     <Container id="code-section">
-      <SubTitle text="Input Code" />
+      <SubTitle text="Input Text" />
       <CodeField name={'CODE'} setText={setText} />
     </Container>
   );
