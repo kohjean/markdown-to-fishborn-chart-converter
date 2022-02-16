@@ -53,6 +53,33 @@ const StyledLabel = styled.label`
 `;
 
 export const CodeField = ({ name, setText }) => {
+  const placeholder = `// You can use '*'
+* problem
+  * factor 1
+    * sub case 1
+    * sub case 2
+    * sub case 3
+      * little node
+      * little node
+      * little node 1
+  * factor 2
+    * sub case 4
+    * sub case 5
+    * sub case 6
+    * sub case 7
+  * factor 3
+    * sub case 8
+    * sub case 9
+    * sub case 10
+    * sub case 11
+  * factor 4
+    * sub case 12
+    * sub case 13
+      * little node
+      * little node
+      * little node 2
+`;
+
   const textDataSetter = (event) => {
     setText(event.target.value);
   };
@@ -62,6 +89,7 @@ export const CodeField = ({ name, setText }) => {
       <StyledLabel htmlFor="textarea">{name}</StyledLabel>
       <StyledTextarea
         id="textarea"
+        placeholder={placeholder}
         onChange={(event) => textDataSetter(event)}
       />
     </Container>
