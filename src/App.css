@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'MonoFont';
+  src: local('MonoFont'),
+    url(./font/NotoSansMonoCJKJPRegular.otf) format('opentype');
+}
+
 html {
   font-size: 16px;
 }
@@ -46,4 +52,6 @@ html {
 
 .inactive {
   opacity: 0.6;
+}.container {
+  font-family: MonoFont;
 }

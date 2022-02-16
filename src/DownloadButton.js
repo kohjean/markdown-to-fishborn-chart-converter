@@ -1,11 +1,12 @@
 import Button from '@mui/material/Button';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
-export const DownloadButton = () => {
+export const DownloadButton = ({handler}) => {
   return (
     <Button
       type="submit"
       variant="contained"
+      onClick={handler}
       size="large"
       endIcon={<FileDownloadIcon />}
       sx={{

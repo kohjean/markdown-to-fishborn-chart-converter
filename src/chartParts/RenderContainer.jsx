@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
+import { forwardRef } from 'react';
 import { Spine } from './Spine';
 import { RecursiveComponent } from './RecursiveComponent';
 
-export const RenderContainer = ({ root }) => {
+export const RenderContainer = forwardRef(({ root }, ref) => {
   const { text, depth, children } = root;
+
   return (
-    <SDiv className="container">
+    <SDiv className="container" ref={ref}>
       <Spine />
       <MainProblem data-depth={depth}>{text}</MainProblem>
       {children.map((elem, idx) => (
@@ -18,7 +20,7 @@ export const RenderContainer = ({ root }) => {
       ))}
     </SDiv>
   );
-};
+});
 
 const MainProblem = styled.div`
   top: calc(50%);
