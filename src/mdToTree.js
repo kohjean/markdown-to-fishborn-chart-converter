@@ -9,7 +9,7 @@ export const mdToTree = (mdLines) => {
   }
 
   function filteredMdList(rows) {
-    const filter = /^[\s\t]*?\*\s/;
+    const filter = /^[\s\t]*?[*+-]\s/;
     return rows.filter((row) => row.match(filter));
   }
 
@@ -21,7 +21,7 @@ export const mdToTree = (mdLines) => {
       (acc, row, idx) => {
         const { stack, prevDepth } = acc;
         const currentDepth = Math.ceil(countSpace(row) / 2); // 空白2つで1つのインデントとみなす
-        const text = row.replace(/^[\s\t]*?\*\s/, '');
+        const text = row.replace(/^[\s\t]*?[*+-]\s/, '');
 
         if (currentDepth > prevDepth) {
           stack.push(idx - 1);
