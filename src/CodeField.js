@@ -24,8 +24,8 @@ const StyledTextarea = styled.textarea`
   left: 0;
   background-color: inherit;
   transition: 0.2s;
-  height: 100%;
-  width: 100%;
+  height: 130%;
+  width: 140%;
   padding: 8px 4px;
   &:hover {
     border: 1px solid #1976d2;
@@ -53,7 +53,7 @@ const StyledLabel = styled.label`
 `;
 
 export const CodeField = ({ name, setText }) => {
-  const placeholder = `// You can use '*'
+  const placeholder = `// Enter something like this.
 * problem
   * factor 1
     * sub case 1
