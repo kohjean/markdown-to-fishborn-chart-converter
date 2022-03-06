@@ -4,6 +4,7 @@ export const Problem = (props) => {
   const { text } = props;
   return <SDiv>{text}</SDiv>;
 };
+
 const SDiv = styled.div`
   box-sizing: border-box;
   position: absolute;

@@ -3,10 +3,6 @@ import { CodeField } from './CodeField';
 import { useToggleActive } from 'components/functional/hooks/useToggleActive';
 import styled from '@emotion/styled';
 
-const Container = styled.div`
-  width: 40%;
-`;
-
 export const CodeSection = ({ setText }) => {
   useToggleActive('code-section', 'file-section');
   return (
@@ -16,3 +12,7 @@ export const CodeSection = ({ setText }) => {
     </Container>
   );
 };
+
+const Container = styled.div`
+  width: 40%;
+`;
