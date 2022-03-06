@@ -6,17 +6,6 @@ import { CodeSection } from 'components/model/codeSection';
 import { ConvertButton } from './ConvertButton';
 import { variable } from 'const/global';
 
-const StyledForm = styled.form`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-`;
-
-const AlignCenter = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 export const Converter = () => {
   const [text, setText] = useState('');
   const navigate = useNavigate();
@@ -44,3 +33,14 @@ export const Converter = () => {
     </>
   );
 };
+
+const StyledForm = styled.form`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`;
+
+const AlignCenter = styled.div`
+  display: flex;
+  align-items: center;
+`;

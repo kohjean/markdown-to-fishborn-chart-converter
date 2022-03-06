@@ -7,12 +7,6 @@ import { FishBornChart } from 'components/model/chart/FishBornChart';
 import { CancelButton } from './CancelButton';
 import { DownloadButton } from './DownloadButton';
 
-const Flex = styled.div`
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-`;
-
 export const ConvertResult = () => {
   const params = useParams();
   const chartImg = useRef();
@@ -50,3 +44,9 @@ export const ConvertResult = () => {
     </>
   );
 };
+
+const Flex = styled.div`
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+`;

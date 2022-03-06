@@ -3,10 +3,6 @@ import { SubTitle } from 'components/commons/title/SubTitle';
 import { useToggleActive } from 'components/functional/hooks/useToggleActive';
 import styled from '@emotion/styled';
 
-const Container = styled.div`
-  width: 40%;
-`;
-
 export const FileSection = ({ setText }) => {
   useToggleActive('file-section', 'code-section');
   return (
@@ -16,3 +12,7 @@ export const FileSection = ({ setText }) => {
     </Container>
   );
 };
+
+const Container = styled.div`
+  width: 40%;
+`;
