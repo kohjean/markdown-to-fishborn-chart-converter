@@ -66,7 +66,7 @@ export const mdToTree = (mdLines) => {
       },
       [[], []],
     );
-    return tree[0]
+    return tree[0];
   }
 
   return listToTree(_data);
