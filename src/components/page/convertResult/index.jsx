@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import styled from '@emotion/styled';
 import domtoimage from 'dom-to-image';
 
-import { FishBornChart } from './FishBornChart';
+import { FishBornChart } from 'components/model/chart/FishBornChart';
 import { CancelButton } from './CancelButton';
 import { DownloadButton } from './DownloadButton';
 

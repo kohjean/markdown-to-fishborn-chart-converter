@@ -1,6 +1,6 @@
-import { FileUploader } from './FileUploader';
-import { SubTitle } from './SubTitle';
-import { useToggleActive } from './hooks/useToggleActive';
+import { FileUploader } from './fileUploader';
+import { SubTitle } from 'components/commons/title/SubTitle';
+import { useToggleActive } from 'components/functional/hooks/useToggleActive';
 import styled from '@emotion/styled';
 
 const Container = styled.div`

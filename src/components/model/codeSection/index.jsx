@@ -1,6 +1,6 @@
-import { SubTitle } from './SubTitle';
+import { SubTitle } from 'components/commons/title/SubTitle';
 import { CodeField } from './CodeField';
-import { useToggleActive } from './hooks/useToggleActive';
+import { useToggleActive } from 'components/functional/hooks/useToggleActive';
 import styled from '@emotion/styled';
 
 const Container = styled.div`

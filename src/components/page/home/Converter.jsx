@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { FileSection } from './FileSection';
-import { CodeSection } from './CodeSection';
+import { FileSection } from 'components/model/fileSection';
+import { CodeSection } from 'components/model/codeSection';
 import { ConvertButton } from './ConvertButton';
-import { variable } from './const/global';
+import { variable } from 'const/global';
 
 const StyledForm = styled.form`
   display: flex;
