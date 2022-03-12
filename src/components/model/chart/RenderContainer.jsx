@@ -26,18 +26,18 @@ const MainProblem = styled.div`
   top: calc(50%);
   left: calc(100% - 7rem);
   width: 7rem;
-  border: 1px solid #000;
+  border: 1px solid ${({ theme }) => theme.colors.black};
   transform: translateY(-50%);
   text-align: center;
 `;
 
 const SDiv = styled.div`
-  background-color: #fff;
-  color: #000;
+  background-color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.black};
   position: relative;
   width: 800px;
   height: 500px;
-  border: 1px solid #000;
+  border: 1px solid ${({ theme }) => theme.colors.black};
   box-sizing: border-box;
   & * {
     position: absolute;

@@ -9,9 +9,10 @@ export const DownloadButton = ({ size, icon, label }) => {
       size={size}
       endIcon={icon}
       sx={{
-        backgroundColor: 'rgba(61,204,250, 0.6)',
+        color: 'text.main',
+        backgroundColor: 'primary.alpha',
         '&:hover': {
-          backgroundColor: 'rgba(61,204,250, 1)',
+          backgroundColor: 'primary.main',
         },
       }}
     >

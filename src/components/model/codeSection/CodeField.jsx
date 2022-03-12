@@ -50,18 +50,16 @@ const Container = styled.div`
   width: 50%;
   margin: 0 auto;
   height: 10rem;
-  &:hover label {
-    color: #1976d2;
-  }
+  &:hover label,
   &:focus-within {
-    color: #1976d2;
+    color: ${({ theme }) => theme.colors.focus};
   }
 `;
 
 const StyledTextarea = styled.textarea`
   box-sizing: border-box;
-  color: white;
-  border: 1px solid #fff;
+  color: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.white};
   border-radius: 4px;
   position: absolute;
   top: 0;
@@ -71,11 +69,9 @@ const StyledTextarea = styled.textarea`
   height: 130%;
   width: 140%;
   padding: 8px 4px;
-  &:hover {
-    border: 1px solid #1976d2;
-  }
+  &:hover,
   &:focus {
-    border: 1px solid #1976d2;
+    border: 1px solid ${({ theme }) => theme.colors.focus};
   }
   &:focus-visible {
     outline: none;
@@ -88,10 +84,10 @@ const StyledLabel = styled.label`
   left: 1rem;
   padding: 8px 2px 0;
   transition: 0.2s;
-  background-color: #282c34;
+  background-color: ${({ theme }) => theme.colors.background};
   z-index: 1;
   font-size: 0.8rem;
   &:active {
-    color: #1976d2;
+    color: ${({ theme }) => theme.colors.focus};
   }
 `;

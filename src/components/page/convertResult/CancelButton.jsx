@@ -8,9 +8,10 @@ export const CancelButton = () => {
       size="large"
       startIcon={<ArrowBackIcon />}
       sx={{
-        backgroundColor: 'rgba(243,99,99, 0.6)',
+        color: 'text.main',
+        backgroundColor: 'cancel.alpha',
         '&:hover': {
-          backgroundColor: 'rgba(243,99,99, 1)',
+          backgroundColor: 'cancel.main',
         },
       }}
     >

@@ -11,9 +11,10 @@ export const ConvertButton = ({ target }) => {
         size="large"
         endIcon={<ChangeCircleIcon />}
         sx={{
-          backgroundColor: 'rgba(61,204,250, 0.6)',
+          color: 'text.main',
+          backgroundColor: 'submit.alpha',
           '&:hover': {
-            backgroundColor: 'rgba(61,204,250, 1)',
+            backgroundColor: 'submit.main',
           },
         }}
       >
