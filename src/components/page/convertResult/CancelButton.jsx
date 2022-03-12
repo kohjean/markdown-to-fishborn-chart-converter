@@ -1,21 +1,16 @@
-import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { variable } from 'const/global';
+import { DangerButton } from 'components/commons/button/DangerButton';
 
 export const CancelButton = () => {
+  const navigate = useNavigate();
   return (
-    <Button
-      variant="contained"
+    <DangerButton
+      label="CANCEL"
       size="large"
       startIcon={<ArrowBackIcon />}
-      sx={{
-        color: 'text.main',
-        backgroundColor: 'cancel.alpha',
-        '&:hover': {
-          backgroundColor: 'cancel.main',
-        },
-      }}
-    >
-      Cancel
-    </Button>
+      onClick={() => navigate(`${variable.__rootdir}/`)}
+    />
   );
 };
