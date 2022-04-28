@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { variable } from 'const/global';
 import { DangerButton } from 'components/commons/button/DangerButton';
 
 export const CancelButton = () => {
@@ -10,7 +9,7 @@ export const CancelButton = () => {
       label="CANCEL"
       size="large"
       startIcon={<ArrowBackIcon />}
-      onClick={() => navigate(`${variable.__rootdir}/`)}
+      onClick={() => navigate('/')}
     />
   );
 };
