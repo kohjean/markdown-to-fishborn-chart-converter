@@ -28,17 +28,13 @@ export const CodeField = ({ name, setText }) => {
       * little node 2
 `;
 
-  const textDataSetter = (event) => {
-    setText(event.target.value);
-  };
-
   return (
     <Container>
       <StyledLabel htmlFor="textarea">{name}</StyledLabel>
       <StyledTextarea
         id="textarea"
         placeholder={placeholder}
-        onChange={(event) => textDataSetter(event)}
+        onChange={(event) => setText(event.target.value)}
       />
     </Container>
   );
