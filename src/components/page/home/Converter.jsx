@@ -7,6 +7,7 @@ import { ConvertButton } from './ConvertButton';
 
 export const Converter = () => {
   const [text, setText] = useState('');
+  const [active, setActive] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -21,11 +22,20 @@ export const Converter = () => {
   return (
     <>
       <StyledForm id="form" onSubmit={handleSubmit}>
-        <FileSection setText={setText} />
+        <FileSection
+          setText={setText}
+          active={active}
+          handler={setActive}
+        />
         <AlignCenter>
           <p>or</p>
         </AlignCenter>
-        <CodeSection setText={setText} />
+        <CodeSection
+          text={text}
+          setText={setText}
+          active={active}
+          handler={setActive}
+        />
         <input type="hidden" value={text} id="hidden" />
       </StyledForm>
       <ConvertButton target={'form'} />

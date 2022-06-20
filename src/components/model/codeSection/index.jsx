@@ -1,14 +1,15 @@
 import { SubTitle } from 'components/commons/title/SubTitle';
 import { CodeField } from './CodeField';
-import { useToggleActive } from 'components/functional/hooks/useToggleActive';
 import styled from '@emotion/styled';
 
-export const CodeSection = ({ setText }) => {
-  useToggleActive('code-section', 'file-section');
+export const CodeSection = ({ text, setText, handler, active }) => {
   return (
-    <Container id="code-section">
+    <Container
+      onClick={() => handler(false)}
+      className={active ? 'inactive' : 'active'}
+    >
       <SubTitle text="Input Text" />
-      <CodeField name={'CODE'} setText={setText} />
+      <CodeField name="CODE" text={text} setText={setText} />
     </Container>
   );
 };
