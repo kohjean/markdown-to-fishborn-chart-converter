@@ -1,19 +1,18 @@
 import { SubTitle } from 'components/commons/title/SubTitle';
 import { CodeField } from './CodeField';
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-export const CodeSection = ({ text, setText, handler, active }) => {
+export const CodeSection = ({ text, setText, handler, active, props }) => {
   return (
-    <Container
+    <div
       onClick={() => handler(false)}
       className={active ? 'inactive' : 'active'}
+      css={css`
+        ${props};
+      `}
     >
       <SubTitle text="Input Text" />
       <CodeField name="CODE" text={text} setText={setText} />
-    </Container>
+    </div>
   );
 };
-
-const Container = styled.div`
-  width: 40%;
-`;

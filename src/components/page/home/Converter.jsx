@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from '@emotion/styled';
 import { FileSection } from 'components/model/fileSection';
 import { CodeSection } from 'components/model/codeSection';
 import { ConvertButton } from './ConvertButton';
+import { mq } from 'components/breakpoints';
+import { css } from '@emotion/react';
 
 export const Converter = () => {
   const [text, setText] = useState('');
@@ -21,35 +22,52 @@ export const Converter = () => {
 
   return (
     <>
-      <StyledForm id="form" onSubmit={handleSubmit}>
+      <form id="form" onSubmit={handleSubmit} css={formStyle}>
         <FileSection
           setText={setText}
           active={active}
           handler={setActive}
+          props={sectionStyle}
         />
-        <AlignCenter>
+        <div css={flexCenter}>
           <p>or</p>
-        </AlignCenter>
+        </div>
         <CodeSection
           text={text}
           setText={setText}
           active={active}
           handler={setActive}
+          props={sectionStyle}
         />
         <input type="hidden" value={text} id="hidden" />
-      </StyledForm>
+      </form>
       <ConvertButton target={'form'} />
     </>
   );
 };
 
-const StyledForm = styled.form`
+const formStyle = css`
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   width: 100%;
+  ${mq[0]} {
+    flex-direction: row;
+  }
 `;
 
-const AlignCenter = styled.div`
+const flexCenter = css`
   display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+`;
+
+const sectionStyle = css`
+  &.active h2 {
+    color: #3dccfa;
+  }
+  ${mq[0]} {
+    width: 40%;
+  }
 `;

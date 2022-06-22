@@ -1,19 +1,15 @@
 import { FileUploader } from './fileUploader';
 import { SubTitle } from 'components/commons/title/SubTitle';
-import styled from '@emotion/styled';
 
-export const FileSection = ({ setText, handler, active }) => {
+export const FileSection = ({ setText, handler, active, props }) => {
   return (
-    <Container
+    <div
       onClick={() => handler(true)}
       className={active ? 'active' : 'inactive'}
+      css={props}
     >
       <SubTitle text="File Upload" />
       <FileUploader size={'10rem'} setText={setText} />
-    </Container>
+    </div>
   );
 };
-
-const Container = styled.div`
-  width: 40%;
-`;
