@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/markdown-to-fishborn-chart-converter/static/css/main.d8734953.chunk.css",
-    "main.js": "/markdown-to-fishborn-chart-converter/static/js/main.d5b82c8e.chunk.js",
-    "main.js.map": "/markdown-to-fishborn-chart-converter/static/js/main.d5b82c8e.chunk.js.map",
-    "runtime-main.js": "/markdown-to-fishborn-chart-converter/static/js/runtime-main.cc8a02c3.js",
-    "runtime-main.js.map": "/markdown-to-fishborn-chart-converter/static/js/runtime-main.cc8a02c3.js.map",
-    "static/js/2.31afd01a.chunk.js": "/markdown-to-fishborn-chart-converter/static/js/2.31afd01a.chunk.js",
-    "static/js/2.31afd01a.chunk.js.map": "/markdown-to-fishborn-chart-converter/static/js/2.31afd01a.chunk.js.map",
-    "static/js/3.5f381409.chunk.js": "/markdown-to-fishborn-chart-converter/static/js/3.5f381409.chunk.js",
-    "static/js/3.5f381409.chunk.js.map": "/markdown-to-fishborn-chart-converter/static/js/3.5f381409.chunk.js.map",
-    "index.html": "/markdown-to-fishborn-chart-converter/index.html",
-    "static/css/main.d8734953.chunk.css.map": "/markdown-to-fishborn-chart-converter/static/css/main.d8734953.chunk.css.map",
-    "static/js/2.31afd01a.chunk.js.LICENSE.txt": "/markdown-to-fishborn-chart-converter/static/js/2.31afd01a.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.791591bc.chunk.css",
+    "main.js": "./static/js/main.aaa973b8.chunk.js",
+    "main.js.map": "./static/js/main.aaa973b8.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.4ae23936.js",
+    "runtime-main.js.map": "./static/js/runtime-main.4ae23936.js.map",
+    "static/js/2.5fa6b2fc.chunk.js": "./static/js/2.5fa6b2fc.chunk.js",
+    "static/js/2.5fa6b2fc.chunk.js.map": "./static/js/2.5fa6b2fc.chunk.js.map",
+    "static/js/3.13b9c787.chunk.js": "./static/js/3.13b9c787.chunk.js",
+    "static/js/3.13b9c787.chunk.js.map": "./static/js/3.13b9c787.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.791591bc.chunk.css.map": "./static/css/main.791591bc.chunk.css.map",
+    "static/js/2.5fa6b2fc.chunk.js.LICENSE.txt": "./static/js/2.5fa6b2fc.chunk.js.LICENSE.txt",
+    "static/media/App.css": "./static/media/NotoSansMonoCJKJPRegular.9756a82f.otf"
   },
   "entrypoints": [
-    "static/js/runtime-main.cc8a02c3.js",
-    "static/js/2.31afd01a.chunk.js",
-    "static/css/main.d8734953.chunk.css",
-    "static/js/main.d5b82c8e.chunk.js"
+    "static/js/runtime-main.4ae23936.js",
+    "static/js/2.5fa6b2fc.chunk.js",
+    "static/css/main.791591bc.chunk.css",
+    "static/js/main.aaa973b8.chunk.js"
   ]
 }
