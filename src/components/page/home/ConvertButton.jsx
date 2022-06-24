@@ -1,24 +1,13 @@
-import Button from '@mui/material/Button';
+import { SubmitButton } from 'components/commons/button/SubmitButton';
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
 
 export const ConvertButton = ({ target }) => {
   return (
-    <>
-      <Button
-        type="submit"
-        form={target}
-        variant="contained"
-        size="large"
-        endIcon={<ChangeCircleIcon />}
-        sx={{
-          backgroundColor: 'rgba(61,204,250, 0.6)',
-          '&:hover': {
-            backgroundColor: 'rgba(61,204,250, 1)',
-          },
-        }}
-      >
-        Convert
-      </Button>
-    </>
+    <SubmitButton
+      label="Convert"
+      target={target}
+      endIcon={<ChangeCircleIcon />}
+      size="large"
+    />
   );
 };

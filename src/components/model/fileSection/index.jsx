@@ -1,18 +1,15 @@
 import { FileUploader } from './fileUploader';
 import { SubTitle } from 'components/commons/title/SubTitle';
-import { useToggleActive } from 'components/functional/hooks/useToggleActive';
-import styled from '@emotion/styled';
 
-export const FileSection = ({ setText }) => {
-  useToggleActive('file-section', 'code-section');
+export const FileSection = ({ setText, handler, active, props }) => {
   return (
-    <Container id="file-section">
+    <div
+      onClick={() => handler(true)}
+      className={active ? 'active' : 'inactive'}
+      css={props}
+    >
       <SubTitle text="File Upload" />
       <FileUploader size={'10rem'} setText={setText} />
-    </Container>
+    </div>
   );
 };
-
-const Container = styled.div`
-  width: 40%;
-`;
