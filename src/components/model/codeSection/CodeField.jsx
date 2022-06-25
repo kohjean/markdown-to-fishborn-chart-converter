@@ -1,4 +1,5 @@
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+import { mq } from 'components/breakpoints';
 
 export const CodeField = ({ name, setText }) => {
   const placeholder = `// Enter something like this.
@@ -29,33 +30,52 @@ export const CodeField = ({ name, setText }) => {
 `;
 
   return (
-    <Container>
-      <StyledLabel htmlFor="textarea">{name}</StyledLabel>
-      <StyledTextarea
+    <div
+      css={(theme) => css`
+        box-sizing: border-box;
+        position: relative;
+        width: 80%;
+        ${mq[0]} {
+          width: 50%;
+        }
+        margin: 0 auto;
+        height: 10rem;
+        &:hover label,
+        &:focus-within {
+          color: ${theme.colors.focus};
+        }
+      `}
+    >
+      <label
+        htmlFor="textarea"
+        css={(theme) => css`
+          position: absolute;
+          top: -1rem;
+          left: 1rem;
+          transition: 0.2s;
+          padding: 8px 2px 0;
+          transition: 0.2s;
+          background-color: ${theme.colors.background};
+          z-index: 1;
+          font-size: 0.8rem;
+        `}
+      >
+        {name}
+      </label>
+      <textarea
         id="textarea"
         placeholder={placeholder}
         onChange={(event) => setText(event.target.value)}
+        css={textareaStyle}
       />
-    </Container>
+    </div>
   );
 };
 
-const Container = styled.div`
+const textareaStyle = (theme) => css`
   box-sizing: border-box;
-  position: relative;
-  width: 50%;
-  margin: 0 auto;
-  height: 10rem;
-  &:hover label,
-  &:focus-within {
-    color: ${({ theme }) => theme.colors.focus};
-  }
-`;
-
-const StyledTextarea = styled.textarea`
-  box-sizing: border-box;
-  color: ${({ theme }) => theme.colors.white};
-  border: 1px solid ${({ theme }) => theme.colors.white};
+  color: ${theme.colors.white};
+  border: 1px solid ${theme.colors.white};
   border-radius: 4px;
   position: absolute;
   top: 0;
@@ -67,23 +87,9 @@ const StyledTextarea = styled.textarea`
   padding: 8px 4px;
   &:hover,
   &:focus {
-    border: 1px solid ${({ theme }) => theme.colors.focus};
+    border: 1px solid ${theme.colors.focus};
   }
   &:focus-visible {
     outline: none;
-  }
-`;
-
-const StyledLabel = styled.label`
-  position: absolute;
-  top: -1rem;
-  left: 1rem;
-  padding: 8px 2px 0;
-  transition: 0.2s;
-  background-color: ${({ theme }) => theme.colors.background};
-  z-index: 1;
-  font-size: 0.8rem;
-  &:active {
-    color: ${({ theme }) => theme.colors.focus};
   }
 `;
