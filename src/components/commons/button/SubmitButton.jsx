@@ -20,7 +20,7 @@ export const SubmitButton = ({
       sx={{
         color: 'text.main',
         width: '10rem',
-        margin: '0 auto',
+        margin: '1rem 0',
         backgroundColor: 'submit.alpha',
         '&:hover': {
           backgroundColor: 'submit.main',

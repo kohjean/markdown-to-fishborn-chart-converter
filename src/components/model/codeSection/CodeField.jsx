@@ -39,7 +39,7 @@ export const CodeField = ({ name, setText }) => {
           width: 50%;
         }
         margin: 0 auto;
-        height: 10rem;
+        height: 13rem;
         &:hover label,
         &:focus-within {
           color: ${theme.colors.focus};
@@ -82,8 +82,11 @@ const textareaStyle = (theme) => css`
   left: 0;
   background-color: inherit;
   transition: 0.2s;
-  height: 130%;
-  width: 140%;
+  height: 100%;
+  width: 100%;
+  ${mq[0]} {
+    width: 140%;
+  }
   padding: 8px 4px;
   &:hover,
   &:focus {
