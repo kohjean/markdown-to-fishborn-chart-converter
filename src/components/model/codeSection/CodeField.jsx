@@ -74,6 +74,7 @@ export const CodeField = ({ name, setText }) => {
 
 const textareaStyle = (theme) => css`
   box-sizing: border-box;
+  font-size: 16px;
   color: ${theme.colors.white};
   border: 1px solid ${theme.colors.white};
   border-radius: 4px;
