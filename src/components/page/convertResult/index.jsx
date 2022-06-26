@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { css } from '@emotion/react';
 
 import domtoimage from 'dom-to-image';
@@ -8,13 +8,14 @@ import { CancelButton } from './CancelButton';
 import { DownloadButton } from './DownloadButton';
 
 export const ConvertResult = () => {
-  const params = useParams();
-  const chartImg = useRef();
+  const chartImgRef = useRef();
+  const location = useLocation();
+  const markdown = location.state.text;
 
   const download = () => {
     // domからイメージを生成
     domtoimage
-      .toPng(chartImg.current)
+      .toPng(chartImgRef.current)
       .then((base64) => {
         const bin = window.atob(base64.replace(/^.+,/, ''));
         const buffer = new Uint8Array(bin.length);
@@ -35,7 +36,7 @@ export const ConvertResult = () => {
 
   return (
     <>
-      <FishBornChart markdown={params.markdown} ref={chartImg} />
+      <FishBornChart markdown={markdown} ref={chartImgRef} />
       <div
         css={css`
           width: 80%;

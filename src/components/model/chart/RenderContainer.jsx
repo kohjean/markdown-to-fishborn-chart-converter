@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-import { Spine } from './Spine';
-import { RecursiveComponent } from './RecursiveComponent';
+import { Spine } from 'components/model/chart/Spine';
+import { RecursiveComponent } from 'components/model/chart/RecursiveComponent.jsx';
 import { css } from '@emotion/react';
 
 export const RenderContainer = forwardRef(({ root }, ref) => {

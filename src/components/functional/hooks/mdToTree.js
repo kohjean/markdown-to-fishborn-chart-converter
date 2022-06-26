@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {array} mdLines
+ * @returns
+ */
+
 export const mdToTree = (mdLines) => {
   const _data = setInfoEachElem(mdLines);
 

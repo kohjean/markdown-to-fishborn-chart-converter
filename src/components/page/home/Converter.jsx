@@ -13,11 +13,8 @@ export const Converter = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // URLエンコードの際に改行コードが変換されるので目印の文字列に変換しておいて受け取り先で復号する
-    const replaceLF = (text) => text.replace(/\r?\n/g, '&nbsp;');
-    const param = replaceLF(`${event.target.children['hidden'].value}`);
-    const url = `/converted/${param}`;
-    navigate(url);
+    // TODO: このタイミングで textStateにチェックをかけて、エラーが出たらメッセージを出して処理を進めないようにする
+    navigate('/converted', { state: { text }, replace: false });
   };
 
   return (
@@ -47,6 +44,7 @@ export const Converter = () => {
         />
         <input type="hidden" value={text} id="hidden" />
       </form>
+      {/* ConvertButtonのonClickではなくformのonSubmitを使って送っている点に注意 */}
       <ConvertButton target={'form'} />
     </div>
   );
