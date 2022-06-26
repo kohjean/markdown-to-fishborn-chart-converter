@@ -10,7 +10,7 @@ import { DownloadButton } from './DownloadButton';
 export const ConvertResult = () => {
   const chartImgRef = useRef();
   const location = useLocation();
-  const markdown = location.state.text;
+  const markdown = location.state.markdown;
 
   const download = () => {
     // domからイメージを生成

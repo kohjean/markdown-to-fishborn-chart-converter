@@ -6,7 +6,6 @@
 
 export const mdToTree = (mdLines) => {
   const _data = setInfoEachElem(mdLines);
-
   function countSpace(line) {
     const regex = /^[\s\t]+/;
     const origLen = line.length;
@@ -21,17 +20,18 @@ export const mdToTree = (mdLines) => {
 
   function setInfoEachElem(md) {
     const rows = filteredMdList(md);
-    const result = [];
-    const parentIndexStack = [0];
+    let result = [];
     rows.reduce(
       (acc, row, idx) => {
+        // stackは要素がどの親に所属するか記憶する為に使う
         const { stack, prevDepth } = acc;
         const currentDepth = Math.ceil(countSpace(row) / 2); // 空白2つで1つのインデントとみなす
         const text = row.replace(/^[\s\t]*?[*+-]\s/, '');
-
+        // インデントの深さが上がったらstackに親のindexを入れる
         if (currentDepth > prevDepth) {
           stack.push(idx - 1);
         }
+
         if (currentDepth < prevDepth) {
           for (let i = prevDepth - currentDepth; i > 0; i--) {
             stack.pop();
@@ -48,7 +48,7 @@ export const mdToTree = (mdLines) => {
         result.push(obj);
         return { stack: stack, prevDepth: currentDepth };
       },
-      { stack: parentIndexStack, prevDepth: 0 },
+      { stack: [0], prevDepth: 0 },
     );
     return result;
   }
