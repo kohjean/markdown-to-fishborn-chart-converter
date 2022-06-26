@@ -21,7 +21,13 @@ export const Converter = () => {
   };
 
   return (
-    <>
+    <div
+      css={css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      `}
+    >
       <form id="form" onSubmit={handleSubmit} css={formStyle}>
         <FileSection
           setText={setText}
@@ -42,7 +48,7 @@ export const Converter = () => {
         <input type="hidden" value={text} id="hidden" />
       </form>
       <ConvertButton target={'form'} />
-    </>
+    </div>
   );
 };
 
