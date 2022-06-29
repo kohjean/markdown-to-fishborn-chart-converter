@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.4997c6ba.css",
-    "main.js": "./static/js/main.f51377d8.js",
-    "static/js/787.a755efde.chunk.js": "./static/js/787.a755efde.chunk.js",
-    "static/media/NotoSansMonoCJKJPRegular.otf": "./static/media/NotoSansMonoCJKJPRegular.9756a82f84f9a4be82d5.otf",
-    "index.html": "./index.html",
-    "main.4997c6ba.css.map": "./static/css/main.4997c6ba.css.map",
-    "main.f51377d8.js.map": "./static/js/main.f51377d8.js.map",
-    "787.a755efde.chunk.js.map": "./static/js/787.a755efde.chunk.js.map"
+    "main.css": "/markdown-to-fishborn-chart-converter/static/css/main.4260a4be.css",
+    "main.js": "/markdown-to-fishborn-chart-converter/static/js/main.e6d19230.js",
+    "static/js/787.a755efde.chunk.js": "/markdown-to-fishborn-chart-converter/static/js/787.a755efde.chunk.js",
+    "static/media/NotoSansMonoCJKJPRegular.otf": "/markdown-to-fishborn-chart-converter/static/media/NotoSansMonoCJKJPRegular.9756a82f84f9a4be82d5.otf",
+    "index.html": "/markdown-to-fishborn-chart-converter/index.html",
+    "main.4260a4be.css.map": "/markdown-to-fishborn-chart-converter/static/css/main.4260a4be.css.map",
+    "main.e6d19230.js.map": "/markdown-to-fishborn-chart-converter/static/js/main.e6d19230.js.map",
+    "787.a755efde.chunk.js.map": "/markdown-to-fishborn-chart-converter/static/js/787.a755efde.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4997c6ba.css",
-    "static/js/main.f51377d8.js"
+    "static/css/main.4260a4be.css",
+    "static/js/main.e6d19230.js"
   ]
 }
