@@ -1,15 +1,17 @@
-import styled from '@emotion/styled';
 import { forwardRef } from 'react';
 import { Spine } from './Spine';
 import { RecursiveComponent } from './RecursiveComponent';
+import { css } from '@emotion/react';
 
 export const RenderContainer = forwardRef(({ root }, ref) => {
   const { text, depth, children } = root;
 
   return (
-    <SDiv className="container" ref={ref}>
+    <div ref={ref} css={containerStyle}>
       <Spine />
-      <MainProblem data-depth={depth}>{text}</MainProblem>
+      <div data-depth={depth} css={problemStyle}>
+        {text}
+      </div>
       {children.map((elem, idx) => (
         <RecursiveComponent
           props={elem}
@@ -18,30 +20,33 @@ export const RenderContainer = forwardRef(({ root }, ref) => {
           branchIdx={idx}
         />
       ))}
-    </SDiv>
+    </div>
   );
 });
 
-const MainProblem = styled.div`
-  top: calc(50%);
-  left: calc(100% - 7rem);
-  width: 7rem;
-  border: 1px solid ${({ theme }) => theme.colors.black};
-  transform: translateY(-50%);
-  text-align: center;
-`;
-
-const SDiv = styled.div`
-  background-color: ${({ theme }) => theme.colors.white};
-  color: ${({ theme }) => theme.colors.black};
+const containerStyle = (theme) => css`
+  font-family: MonoFont;
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.black};
   position: relative;
   width: 800px;
+  min-width: 800px;
   height: 500px;
-  border: 1px solid ${({ theme }) => theme.colors.black};
+  border: 1px solid ${theme.colors.black};
   box-sizing: border-box;
+
   & * {
     position: absolute;
     box-sizing: border-box;
     overflow-wrap: anywhere;
   }
+`;
+
+const problemStyle = (theme) => css`
+  top: calc(50%);
+  left: calc(100% - 7rem);
+  width: 7rem;
+  border: 1px solid ${theme.colors.black};
+  transform: translateY(-50%);
+  text-align: center;
 `;

@@ -19,6 +19,8 @@ export const SubmitButton = ({
       onClick={onClick}
       sx={{
         color: 'text.main',
+        width: '10rem',
+        margin: '1rem 0',
         backgroundColor: 'submit.alpha',
         '&:hover': {
           backgroundColor: 'submit.main',
