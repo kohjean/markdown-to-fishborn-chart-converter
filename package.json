@@ -21,7 +21,7 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "^5.0.1"
   },
-  "homepage": ".",
+  "homepage": "https://kohjean.github.io/markdown-to-fishborn-chart-converter/",
   "scripts": {
     "start": "craco start",
     "build": "craco build",
