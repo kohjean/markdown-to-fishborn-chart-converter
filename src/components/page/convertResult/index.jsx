@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import styled from '@emotion/styled';
-import domtoimage from 'dom-to-image';
+import { css } from '@emotion/react';
 
+import domtoimage from 'dom-to-image';
 import { FishBornChart } from 'components/model/chart/FishBornChart';
 import { CancelButton } from './CancelButton';
 import { DownloadButton } from './DownloadButton';
@@ -36,17 +36,17 @@ export const ConvertResult = () => {
   return (
     <>
       <FishBornChart markdown={params.markdown} ref={chartImg} />
-      <Flex>
+      <div
+        css={css`
+          width: 80%;
+          display: flex;
+          justify-content: space-evenly;
+        `}
+      >
         <CancelButton />
         <DownloadButton handler={download} />
         <div />
-      </Flex>
+      </div>
     </>
   );
 };
-
-const Flex = styled.div`
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-`;

@@ -5,7 +5,7 @@ import { theme } from 'styles/theme';
 export const Provider = ({ children }) => {
   return (
     <BrowserRouter>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </BrowserRouter>
   );
 };
