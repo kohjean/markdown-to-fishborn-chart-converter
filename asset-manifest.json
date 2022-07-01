@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/markdown-to-fishborn-chart-converter/static/css/main.4260a4be.css",
-    "main.js": "/markdown-to-fishborn-chart-converter/static/js/main.090bfa1d.js",
+    "main.js": "/markdown-to-fishborn-chart-converter/static/js/main.15d79e25.js",
     "static/js/787.a755efde.chunk.js": "/markdown-to-fishborn-chart-converter/static/js/787.a755efde.chunk.js",
     "static/media/NotoSansMonoCJKJPRegular.otf": "/markdown-to-fishborn-chart-converter/static/media/NotoSansMonoCJKJPRegular.9756a82f84f9a4be82d5.otf",
     "index.html": "/markdown-to-fishborn-chart-converter/index.html",
     "main.4260a4be.css.map": "/markdown-to-fishborn-chart-converter/static/css/main.4260a4be.css.map",
-    "main.090bfa1d.js.map": "/markdown-to-fishborn-chart-converter/static/js/main.090bfa1d.js.map",
+    "main.15d79e25.js.map": "/markdown-to-fishborn-chart-converter/static/js/main.15d79e25.js.map",
     "787.a755efde.chunk.js.map": "/markdown-to-fishborn-chart-converter/static/js/787.a755efde.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4260a4be.css",
-    "static/js/main.090bfa1d.js"
+    "static/js/main.15d79e25.js"
   ]
 }
