@@ -17,7 +17,7 @@ function App() {
           `}
         >
           <a
-            href="/"
+            href={process.env.PUBLIC_URL}
             css={css`
               display: inline-block;
             `}
@@ -47,9 +47,8 @@ function App() {
         </h1>
       </header>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:markdown" element={<Home />} />
-        <Route path="/converted/:markdown" element={<ConvertResultPage />} />
+        <Route path={`${process.env.PUBLIC_URL}`} element={<Home />} />
+        <Route path={`${process.env.PUBLIC_URL}/converted/`} element={<ConvertResultPage />} />
         <Route path="*" element={<h1>not found</h1>} />
       </Routes>
       <footer

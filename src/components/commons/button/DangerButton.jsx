@@ -10,7 +10,7 @@ export const DangerButton = ({ label, startIcon, endIcon, size }) => {
       startIcon={startIcon}
       endIcon={endIcon}
       size={size}
-      onClick={() => navigate('/')}
+      onClick={() => navigate(`${process.env.PUBLIC_URL}`)}
       sx={{
         color: 'text.main',
         width: '10rem',
