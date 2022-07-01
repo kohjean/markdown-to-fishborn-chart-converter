@@ -18,7 +18,10 @@ export const Converter = () => {
     const data = mdLines.filter((row) => row.match(filter));
     // 変換できないデータであればdataは空配列になる
     if (data.length) {
-      navigate('/converted', { state: { markdown }, replace: false });
+      navigate(`${process.env.PUBLIC_URL}/converted/`, {
+        state: { markdown },
+        replace: false,
+      });
     } else {
       alert('入力されたデータは変換できません。');
     }
