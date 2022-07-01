@@ -47,17 +47,8 @@ function App() {
         </h1>
       </header>
       <Routes>
-<<<<<<< HEAD
         <Route path={`${process.env.PUBLIC_URL}`} element={<Home />} />
-        <Route path={`${process.env.PUBLIC_URL}:markdown`} element={<Home />} />
-        <Route
-          path={`${process.env.PUBLIC_URL}/converted/:markdown`}
-          element={<ConvertResultPage />}
-        />
-=======
-        <Route path="/" element={<Home />} />
-        <Route path="/converted/" element={<ConvertResultPage />} />
->>>>>>> develop
+        <Route path={`${process.env.PUBLIC_URL}/converted/`} element={<ConvertResultPage />} />
         <Route path="*" element={<h1>not found</h1>} />
       </Routes>
       <footer
