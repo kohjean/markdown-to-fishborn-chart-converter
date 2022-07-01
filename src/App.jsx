@@ -48,8 +48,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:markdown" element={<Home />} />
-        <Route path="/converted/:markdown" element={<ConvertResultPage />} />
+        <Route path="/converted/" element={<ConvertResultPage />} />
         <Route path="*" element={<h1>not found</h1>} />
       </Routes>
       <footer

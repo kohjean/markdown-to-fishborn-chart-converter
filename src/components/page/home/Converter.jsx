@@ -7,17 +7,21 @@ import { mq } from 'components/breakpoints';
 import { css } from '@emotion/react';
 
 export const Converter = () => {
-  const [text, setText] = useState('');
+  const [markdown, setText] = useState('');
   const [active, setActive] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // URLエンコードの際に改行コードが変換されるので目印の文字列に変換しておいて受け取り先で復号する
-    const replaceLF = (text) => text.replace(/\r?\n/g, '&nbsp;');
-    const param = replaceLF(`${event.target.children['hidden'].value}`);
-    const url = `/converted/${param}`;
-    navigate(url);
+    const mdLines = markdown.split('\n');
+    const filter = /^[\s\t]*?[*+-]\s/;
+    const data = mdLines.filter((row) => row.match(filter));
+    // 変換できないデータであればdataは空配列になる
+    if (data.length) {
+      navigate('/converted', { state: { markdown }, replace: false });
+    } else {
+      alert('入力されたデータは変換できません。');
+    }
   };
 
   return (
@@ -39,14 +43,15 @@ export const Converter = () => {
           <p>or</p>
         </div>
         <CodeSection
-          text={text}
+          text={markdown}
           setText={setText}
           active={active}
           handler={setActive}
           props={sectionStyle}
         />
-        <input type="hidden" value={text} id="hidden" />
+        <input type="hidden" value={markdown} id="hidden" />
       </form>
+      {/* ConvertButtonのonClickではなくformのonSubmitを使って送っている点に注意 */}
       <ConvertButton target={'form'} />
     </div>
   );
