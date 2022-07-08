@@ -1,11 +1,10 @@
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-export const Problem = (props) => {
-  const { text } = props;
-  return <SDiv>{text}</SDiv>;
+export const Problem = ({ text }) => {
+  return <div css={style}>{text}</div>;
 };
 
-const SDiv = styled.div`
+const style = css`
   box-sizing: border-box;
   position: absolute;
   width: 7rem;

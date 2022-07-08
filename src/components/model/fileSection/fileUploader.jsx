@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styled from '@emotion/styled';
 import Button from '@mui/material/Button';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
+import { css } from '@emotion/react';
 
 export const FileUploader = (props) => {
   const [filename, setFilename] = useState('');
@@ -29,11 +29,14 @@ export const FileUploader = (props) => {
       </label>
       <div>
         <label htmlFor="file">
-          <Input
+          <input
             accept=".md"
             id="file"
             type="file"
             onChange={(event) => fileDataSetter(event)}
+            css={css`
+              display: none;
+            `}
           />
           <Button
             className="MuiButton-textSecondary"
@@ -49,7 +52,3 @@ export const FileUploader = (props) => {
     </>
   );
 };
-
-const Input = styled.input`
-  display: none;
-`;
