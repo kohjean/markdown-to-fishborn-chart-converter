@@ -1,1 +1,1 @@
-export const SubTitle = ({ text }) => <h2>{text}</h2>;
+export const SubTitle = ({ title }) => <h2>{title}</h2>;

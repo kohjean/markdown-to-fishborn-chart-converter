@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { mq } from 'components/breakpoints';
 
-export const CodeField = ({ name, setText }) => {
+export const CodeField = ({ name, mdText, setMdText }) => {
   const placeholder = `// Enter something like this.
 * problem
   * factor 1
@@ -64,8 +64,8 @@ export const CodeField = ({ name, setText }) => {
       </label>
       <textarea
         id="textarea"
+        onChange={(event) => setMdText(event.target.value)}
         placeholder={placeholder}
-        onChange={(event) => setText(event.target.value)}
         css={textareaStyle}
       />
     </div>

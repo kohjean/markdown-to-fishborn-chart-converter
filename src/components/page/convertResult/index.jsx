@@ -10,7 +10,7 @@ import { DownloadButton } from './DownloadButton';
 export const ConvertResult = () => {
   const chartImgRef = useRef();
   const location = useLocation();
-  const markdown = location.state.markdown;
+  const mdText = location.state.mdText;
 
   const download = () => {
     // domからイメージを生成
@@ -36,7 +36,7 @@ export const ConvertResult = () => {
 
   return (
     <>
-      <FishBornChart markdown={markdown} ref={chartImgRef} />
+      <FishBornChart mdText={mdText} ref={chartImgRef} />
       <div
         css={css`
           width: 80%;

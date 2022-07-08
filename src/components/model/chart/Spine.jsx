@@ -1,10 +1,10 @@
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 export const Spine = () => {
-  return <SDiv className="spine" />;
+  return <div css={style} className="spine" />;
 };
 
-const SDiv = styled.div`
+const style = css`
   box-sizing: border-box;
   position: absolute;
   border: 1px solid #000;
