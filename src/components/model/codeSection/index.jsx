@@ -2,17 +2,17 @@ import { SubTitle } from 'components/commons/title/SubTitle';
 import { CodeField } from './CodeField';
 import { css } from '@emotion/react';
 
-export const CodeSection = ({ text, setText, handler, active, props }) => {
+export const CodeSection = ({ mdText, setMdText, active, setActive, style }) => {
   return (
     <div
-      onClick={() => handler(false)}
+      onClick={() => setActive(false)}
       className={active ? 'inactive' : 'active'}
       css={css`
-        ${props};
+        ${style};
       `}
     >
-      <SubTitle text="Input Text" />
-      <CodeField name="CODE" text={text} setText={setText} />
+      <SubTitle title="Input Text" />
+      <CodeField name="CODE" mdText={mdText} setMdText={setMdText} />
     </div>
   );
 };

@@ -1,15 +1,15 @@
 import { FileUploader } from './fileUploader';
 import { SubTitle } from 'components/commons/title/SubTitle';
 
-export const FileSection = ({ setText, handler, active, props }) => {
+export const FileSection = ({ setMdText, active, setActive, style }) => {
   return (
     <div
-      onClick={() => handler(true)}
+      onClick={() => setActive(true)}
       className={active ? 'active' : 'inactive'}
-      css={props}
+      css={style}
     >
-      <SubTitle text="File Upload" />
-      <FileUploader size={'10rem'} setText={setText} />
+      <SubTitle title="File Upload" />
+      <FileUploader size={'10rem'} setMdText={setMdText} />
     </div>
   );
 };

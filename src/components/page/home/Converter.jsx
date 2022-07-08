@@ -7,19 +7,19 @@ import { mq } from 'components/breakpoints';
 import { css } from '@emotion/react';
 
 export const Converter = () => {
-  const [markdown, setText] = useState('');
+  const [mdText, setMdText] = useState('');
   const [active, setActive] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const mdLines = markdown.split('\n');
+    const mdLines = mdText.split('\n');
     const filter = /^[\s\t]*?[*+-]\s/;
     const data = mdLines.filter((row) => row.match(filter));
     // 変換できないデータであればdataは空配列になる
     if (data.length) {
       navigate(`${process.env.PUBLIC_URL}/converted/`, {
-        state: { markdown },
+        state: { mdText },
         replace: false,
       });
     } else {
@@ -37,22 +37,22 @@ export const Converter = () => {
     >
       <form id="form" onSubmit={handleSubmit} css={formStyle}>
         <FileSection
-          setText={setText}
+          setMdText={setMdText}
           active={active}
-          handler={setActive}
-          props={sectionStyle}
+          setActive={setActive}
+          style={sectionStyle}
         />
         <div css={flexCenter}>
           <p>or</p>
         </div>
         <CodeSection
-          text={markdown}
-          setText={setText}
+          mdText={mdText}
+          setMdText={setMdText}
           active={active}
-          handler={setActive}
-          props={sectionStyle}
+          setActive={setActive}
+          style={sectionStyle}
         />
-        <input type="hidden" value={markdown} id="hidden" />
+        <input type="hidden" value={mdText} id="hidden" />
       </form>
       {/* ConvertButtonのonClickではなくformのonSubmitを使って送っている点に注意 */}
       <ConvertButton target={'form'} />
