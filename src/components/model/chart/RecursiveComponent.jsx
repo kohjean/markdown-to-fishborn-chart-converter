@@ -29,15 +29,8 @@ const nodeStyle = ({ idx, isUpper }) => css`
     width: 250px;
     border-bottom: solid 1px #000;
     // 上下で異なる
-    ${isUpper
-      ? `
-        top: calc(122px + 0.5rem);
-        transform: rotate(60deg) translateY(-50%);
-    `
-      : `
-        top: calc(375px - 1.5rem + 2px);
-        transform: rotate(120deg);
-      `}
+    top: calc(${isUpper ? '122px + 0.5rem' : '375px - 1.5rem + 2px'});
+    transform: ${isUpper ? 'rotate(60deg) translateY(-50%)' : 'rotate(120deg)'};
     // インデックスで異なる
     left: calc(100% - 12rem * ${idx * 0.5 + 2});
   }
@@ -46,17 +39,13 @@ const nodeStyle = ({ idx, isUpper }) => css`
     top: calc((98px + 1.5rem) / 2);
     // 領域(子要素(数, 高さ))で異なる
     width: 96px;
+    transform: ${isUpper ? 'rotate(-60deg)' : 'rotate(-120deg)'};
+    left: calc(
+      ${isUpper ? `185px - (${idx + 1} * 54px)` : `-30px + (${idx + 1} * 50px)`}
+    );
     ${isUpper
-      ? `
-        transform: rotate(-60deg);
-        border-top: 1px solid #000;
-        left: calc(185px - (${idx + 1} * 54px));
-    `
-      : `
-        transform: rotate(-120deg);
-        border-bottom: 1px solid #000;
-        left: calc(-30px + (${idx + 1} * 50px));
-      `}
+      ? 'border-top: 1px solid #000;'
+      : 'border-bottom: 1px solid #000;'}
   }
   &[data-depth='3'] {
     font-size: 0.6rem;
@@ -76,6 +65,6 @@ const nodeStyle = ({ idx, isUpper }) => css`
       transform: rotate(120deg);
     `}
     // インデックスで異なる
-    left: calc(36px - ${idx * 32}px)
+    left: ${36 -idx * 32}px
   }
 `;
