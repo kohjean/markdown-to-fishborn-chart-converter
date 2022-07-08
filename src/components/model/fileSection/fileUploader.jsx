@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { css } from '@emotion/react';
 
-export const FileUploader = (props) => {
+export const FileUploader = ({ setMdText, sx }) => {
   const [filename, setFilename] = useState('');
 
   const fileDataSetter = (event) => {
@@ -12,7 +12,7 @@ export const FileUploader = (props) => {
       reader.readAsText(event.target.files[0], 'UTF-8');
       reader.onload = () => {
         setFilename(event.target.files[0].name);
-        props.setText(reader.result);
+        setMdText(reader.result);
       };
     }
   };
@@ -22,8 +22,7 @@ export const FileUploader = (props) => {
       <label htmlFor="file">
         <UploadFileIcon
           sx={{
-            fontSize: props.size,
-            '&:hover': { cursor: 'pointer' },
+            ...sx,
           }}
         />
       </label>

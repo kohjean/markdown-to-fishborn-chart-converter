@@ -9,7 +9,14 @@ export const FileSection = ({ setMdText, active, setActive, style }) => {
       css={style}
     >
       <SubTitle title="File Upload" />
-      <FileUploader size={'10rem'} setMdText={setMdText} />
+      <FileUploader setMdText={setMdText} sx={sx} />
     </div>
   );
+};
+
+const sx = {
+  fontSize: '10rem',
+  '&:hover': {
+    cursor: 'pointer',
+  },
 };
