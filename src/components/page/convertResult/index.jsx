@@ -13,6 +13,7 @@ export const ConvertResult = () => {
   const mdText = location.state.mdText;
 
   const download = () => {
+    const title = mdText.match(/^\* (.+)/)[1];
     // domからイメージを生成
     domtoimage
       .toPng(chartImgRef.current)
@@ -26,7 +27,7 @@ export const ConvertResult = () => {
         // ダウンロード処理
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
-        link.download = `fb-chart.png`;
+        link.download = `fbc-${title}.png`;
         link.click();
       })
       .catch((e) => {
