@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
 import { mq } from 'components/breakpoints';
+import { visualizeHeadSpace, invisibleHeadCup } from 'components/functional';
 
-export const CodeField = ({ name, mdText, setMdText }) => {
+export const CodeField = ({ name, active, mdText, setMdText }) => {
   const placeholder = `// Enter something like this.
 * problem
   * factor 1
@@ -64,8 +65,24 @@ export const CodeField = ({ name, mdText, setMdText }) => {
       </label>
       <textarea
         id="textarea"
-        onChange={(event) => setMdText(event.target.value)}
         placeholder={placeholder}
+        wrap="off"
+        // 改行毎の行頭の半角スペースを視認出来るように変換している
+        {...(!active && {
+          value: mdText
+            .split('\n')
+            .map((line) => visualizeHeadSpace(line))
+            .join('\n'),
+        })}
+        // 視覚化した半角スペースを元に戻してstateにセットする
+        onChange={(event) =>
+          setMdText(
+            event.target.value
+              .split('\n')
+              .map((line) => invisibleHeadCup(line))
+              .join('\n'),
+          )
+        }
         css={textareaStyle}
       />
     </div>
@@ -73,6 +90,7 @@ export const CodeField = ({ name, mdText, setMdText }) => {
 };
 
 const textareaStyle = (theme) => css`
+  font-family: MonoFont;
   box-sizing: border-box;
   font-size: 16px;
   color: ${theme.colors.white};
