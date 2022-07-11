@@ -8,12 +8,12 @@ import { css } from '@emotion/react';
 
 export const Converter = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   // 変換後の画面からBACKボタンで戻ってきた時はデータを維持したまま表示する
-  const cachedText = location.state?.mdText ?? '';
+  const location = useLocation();
+  const cachedState = location.state;
+  const cachedText = cachedState?.mdText ?? '';
   const [mdText, setMdText] = useState(cachedText);
-  const [active, setActive] = useState(location.state?.active ?? true);
-
+  const [active, setActive] = useState(cachedState?.active ?? true);
   const handleSubmit = (event) => {
     event.preventDefault();
     const mdLines = mdText.split('\n');
