@@ -44,7 +44,7 @@ export const ConvertResult = () => {
           justify-content: space-evenly;
         `}
       >
-        <CancelButton />
+        <CancelButton mdText={mdText} />
         <DownloadButton handler={download} />
         <div />
       </div>

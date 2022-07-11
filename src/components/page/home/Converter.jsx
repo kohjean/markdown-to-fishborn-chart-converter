@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FileSection } from 'components/model/fileSection';
 import { CodeSection } from 'components/model/codeSection';
 import { ConvertButton } from './ConvertButton';
@@ -7,9 +7,12 @@ import { mq } from 'components/breakpoints';
 import { css } from '@emotion/react';
 
 export const Converter = () => {
-  const [mdText, setMdText] = useState('');
-  const [active, setActive] = useState(true);
   const navigate = useNavigate();
+  const location = useLocation();
+  // 変換後の画面からBACKボタンで戻ってきた時はデータを維持したまま表示する
+  const cachedText = location.state?.mdText ?? '';
+  const [mdText, setMdText] = useState(cachedText);
+  const [active, setActive] = useState(location.state?.active ?? true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,6 +29,11 @@ export const Converter = () => {
       alert('入力されたデータは変換できません。');
     }
   };
+
+  // useLocationのstateをリフレッシュする
+  useEffect(() => {
+    return window.history.pushState(null, '');
+  });
 
   return (
     <div
@@ -47,6 +55,7 @@ export const Converter = () => {
         </div>
         <CodeSection
           mdText={mdText}
+          value={mdText}
           setMdText={setMdText}
           active={active}
           setActive={setActive}
